@@ -5,9 +5,13 @@ import { FooterComponent } from "../components/FooterComponent";
 export function DefaultLayout() {
     return (
         <>
-            <HeaderComponent/>
-            <Outlet />
-            <FooterComponent/>
+            <div className="min-vh-100 d-flex flex-column">
+                <HeaderComponent />
+                <main className="flex-grow-1 container-lg">
+                    <Outlet />
+                </main>
+                <FooterComponent />
+            </div>
         </>
     )
 }

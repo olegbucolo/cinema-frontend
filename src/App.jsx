@@ -1,16 +1,15 @@
 import { Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { HomePage } from './pages/HomePage'
-import { ProvaPage } from './pages/ProvaPage'
+import { CategoriesPage } from './pages/CategoriesPage'
 
 function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<DefaultLayout/>}>
-        <Route index element={<HomePage/>}/>
-        <Route path="/category" element={<ProvaPage/>}/>
-        <Route index element={<HomePage/>}/>
+      <Route path="api" element={<DefaultLayout/>}>
+        <Route path="movies" element={<HomePage/>}/>
+        <Route path="categories" element={<CategoriesPage/>}/>
       </Route>
     </Routes>
   )
