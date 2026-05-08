@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
 
-export function HomePage() {
+export function MoviesPage() {
 
     const [movies, setMovies] = useState([]);
 
@@ -19,12 +19,17 @@ export function HomePage() {
     }, []);
 
     return (
-        <section className="bg-secondary vh-100">
+        <section className="min-vh-100">
             <h1>Film</h1>
+            <ul className="m-0 p-0 section">
 
-            {movies.map(movie => (
-                <MovieCard key={movie.id} movie={movie}/>
-            ))}
+                <li className="row">
+                    {movies.map(movie => (
+                        <MovieCard key={movie.id} movie={movie} />
+                    ))}
+                </li>
+
+            </ul>
         </section>
     );
 }
