@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
+import api from '../api/api'
 
 export function MoviesPage() {
 
@@ -8,12 +9,12 @@ export function MoviesPage() {
 
     useEffect(() => {
 
-        axios.get("http://localhost:8080/api/movies")
+        api.get("/movies")
             .then(response => {
                 setMovies(response.data);
             })
             .catch(error => {
-                console.error(error);
+                console.error("ERROR: ", error);
             });
 
     }, []);

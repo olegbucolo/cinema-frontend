@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { CategoryCard } from '../components/CategoryCard';
 import axios from 'axios'
+import api from '../api/api'
 
 export function CategoriesPage() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/categories")
+        api.get("categories")
         .then(res => {
             setCategories(res.data)
         })

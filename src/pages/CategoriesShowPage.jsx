@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import axios from 'axios'
+import api from '../api/api'
 
 export function CategoriesShowPage() {
 
@@ -9,7 +10,7 @@ export function CategoriesShowPage() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/categories/${id}`)
+        api.get(`categories/${id}`)
             .then(res => {
                 setCategory(res.data);
             })
@@ -19,9 +20,10 @@ export function CategoriesShowPage() {
     })
 
     return (
-        <section className="vh-100">
-            <h1>{category.title}</h1>
-            <h1>{category.description}</h1>
+        <section className="vh-100 mt-5">
+            <h2 className="m-0 mb-3">{category.title}</h2>
+
+            <p>{category.description}</p>
         </section>
     )
 }

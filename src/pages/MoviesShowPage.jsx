@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { MovieCard } from "../components/MovieCard";
 import { NavLink, useParams } from "react-router-dom";
+import api from "../api/api";
 
 export function MoviesShowPage() {
     const { id } = useParams();
@@ -11,7 +12,7 @@ export function MoviesShowPage() {
 
     useEffect(() => {
 
-        axios.get("http://localhost:8080/api/movies/" + id)
+        api.get("movies/" + id)
             .then(response => {
                 setMovie(response.data);
             })
