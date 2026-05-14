@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="api" element={<DefaultLayout/>}>
+      <Route path="/" element={<DefaultLayout/>}>
         <Route path="movies" element={<MoviesPage/>}/>
         <Route path="movies/:id" element={<MoviesShowPage/>}/>
         <Route path="categories" element={<CategoriesPage/>}/>
