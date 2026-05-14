@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { MoviesPage } from './pages/MoviesPage'
 import { MoviesShowPage } from './pages/MoviesShowPage'
@@ -9,11 +9,12 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<DefaultLayout/>}>
-        <Route path="movies" element={<MoviesPage/>}/>
-        <Route path="movies/:id" element={<MoviesShowPage/>}/>
-        <Route path="categories" element={<CategoriesPage/>}/>
-        <Route path="categories/:id" element={<CategoriesShowPage/>}/>
+      <Route path="/api" element={<DefaultLayout />}>
+        <Route index element={<Navigate to="/movies" replace />} />
+        <Route path="movies" element={<MoviesPage />} />
+        <Route path="movies/:id" element={<MoviesShowPage />} />
+        <Route path="categories" element={<CategoriesPage />} />
+        <Route path="categories/:id" element={<CategoriesShowPage />} />
       </Route>
     </Routes>
   )
