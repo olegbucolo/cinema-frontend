@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: import.meta.env.VIET_RENDER_URL
+    baseURL: import.meta.env.VITE_RENDER_URL
 });
