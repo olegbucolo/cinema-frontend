@@ -116,7 +116,7 @@ Add / edit / remove movie
 
 ### 🔄 Backend-Driven Data
 
-![Dynamic Backend Data](./screenshots/dynamic-data.png)
+![Dynamic Backend Data](./screenshots/dynamic-data.gif)
 
 ### 🎥 Live Backend Data Synchronization
 
